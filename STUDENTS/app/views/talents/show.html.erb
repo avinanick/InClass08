@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Talent:</strong>
+  <%= @talent.talent %>
+</p>
+<p>
+	<strong>Students with this talent:</strong>
+	<%= @talent.students.map {|x| x.to_label}.join ', ' %>
+</p>
+
+
+<%= link_to 'Edit', edit_talent_path(@talent) %> |
+<%= link_to 'Back', talents_path %>

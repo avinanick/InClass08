@@ -1,0 +1,24 @@
+<%= simple_form_for(@talent) do |f| %>
+  <% if @talent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@talent.errors.count, "error") %> prohibited this talent from being saved:</h2>
+
+      <ul>
+      <% @talent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :talent %><br>
+    <%= f.text_field :talent %>
+  </div>
+  <div>
+    <%= f.association :students %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
